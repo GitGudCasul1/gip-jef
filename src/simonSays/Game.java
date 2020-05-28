@@ -12,9 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * 
+ * in this class i made the system that makes the pattern and shows it to the user
+ *
+ */
 public class Game {
 	public String sequence = "";
-	
+	public static int patternlength = 4;
 	int gameScore = 0;
 	Buttons buttons;
 	Score score;
@@ -30,8 +35,9 @@ public class Game {
 		JPanel panel = new JPanel();
 		
 		game.buttons.buttons(panel);
-		game.simon(4);
+		game.simon(patternlength);
 		panel.add(game.score.scoreboard);
+		game.score.naam(panel);
 		
 		frame.add(panel);
 		frame.setVisible(true);
@@ -87,7 +93,7 @@ public void showSequence() {
 	
 	
 	
-	private void simon(int length) { //this method creates a random pattern of letters
+	public void simon(int length) { //this method creates a random pattern of letters
 		String[] array = {"R", "G", "Y","B"};
 		Random r = new Random();
 		

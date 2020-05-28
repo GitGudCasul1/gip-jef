@@ -9,6 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * 
+ * in this class i made the buttons and the system that checks if the input is correct
+ *
+ */
 public class Buttons {
 	
 	public JButton blue, yellow, green, red;
@@ -85,7 +90,19 @@ public class Buttons {
 //				controleinput();
 				gameinstantie.showSequence();
 			}
-
+		});
+		
+		JButton nextSeq = new JButton("Next Sequence");
+		nextSeq.setPreferredSize(new Dimension(150, 50));
+		nextSeq.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameinstantie.sequence = "";
+				input = "";
+				length = 0;
+				gameinstantie.simon(gameinstantie.patternlength);
+			}
 		});
 				
 		panel.add(red);
@@ -93,6 +110,7 @@ public class Buttons {
 		panel.add(yellow);
 		panel.add(blue);
 		panel.add(start);
+		panel.add(nextSeq);
 	}
 	
 	private void input(String kleur) { //this method is what happens when you press a button
@@ -101,6 +119,11 @@ public class Buttons {
 	}
 	
 	private void controleinput() { //this method is work in progress
+		if (length > gameinstantie.sequence.length() - 1) {
+			//this code is executed if the pattern is finished and the user presses another button
+			System.out.println("sequence ended");
+			return;
+		}
 		char inputchar = input.charAt(length);
 		char sequencechar = gameinstantie.sequence.charAt(length);
 		
@@ -112,4 +135,5 @@ public class Buttons {
 			scoreinstantie.score("LOSE");
 		}
 	}
+	
 }
