@@ -11,7 +11,10 @@ import javax.swing.Timer;
 
 /**
  * 
- * in this class i made the buttons and the system that checks if the input is correct
+ * in this class i made the buttons and the system that checks if the input is correct.
+ * in the buttons() method i create all the buttons that you can see on the screen.
+ * the input() method i put the code that gets executed when the player presses a button.
+ * in the controleinput() method i check if the players input is the same as the randomly generated sequence.
  *
  */
 public class Buttons {

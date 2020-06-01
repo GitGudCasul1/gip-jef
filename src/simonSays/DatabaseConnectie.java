@@ -19,7 +19,7 @@ public class DatabaseConnectie {
 		DatabaseConnectie dbc = new DatabaseConnectie();
 		
 		try {
-			dbc.con = DriverManager.getConnection("jdbc:sqlite:SimonSays.db");
+			dbc.con = DriverManager.getConnection("jdbc:sqlite:src/simonSays/SimonSays.db");
 			
 			ResultSet variableresultset = dbc.executestatement();
 			dbc.printResultSet(variableresultset);
@@ -32,7 +32,7 @@ public class DatabaseConnectie {
 	private void printResultSet(ResultSet resultset) {
 		try {
 			while (resultset.next()) {
-				System.out.println(resultset.getString("name"));			
+				System.out.println(resultset.getString("naam"));			
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

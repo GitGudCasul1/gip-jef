@@ -1,0 +1,26 @@
++ generate sequence
++ user input to string variable
++ show sequence to user (change button color) with timer
++ controleer user input tegen de sequence
+	+ Method aanmaken die elke keer wordt opgeroepen als de user klikt op een knop
+		+ als fout geklikt: gui toont dat er een fout is 
+	+ Als sequence correct: score aanpassen & tonen in de gui
++ verander de sequence met een bepaalde knop
+- maak het mogelijk moeilijkheidsgraad in te stellen (JSlider)
+	- lengte van de sequence
+	- snelheid
+	
++ score -> aan de gebruiker tonen
++ gebruiker mogelijkheid geven van zijn naam in te geven
+- informatie gebruiker en score opslaan in database
+- (Optioneel) afbeeldingen gebruiken voor knoppen? Spel mooier maken
+
+- database
+	- database aanmaken (sqlite)
+	- schema aanmaken
+	- spel verbinden met database (JDBC connectie)
+	- Driver (sqlite jdbc driver) toevoegen aan eclipse
+	
+- SQL insert statement: invoegen speler naam en score in db
+- SQL select statement: uit de database de lijst van spelers halen
+	- Deze lijst tonen in een JList

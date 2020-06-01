@@ -14,7 +14,11 @@ import javax.swing.Timer;
 
 /**
  * 
- * in this class i made the system that makes the pattern and shows it to the user
+ * in this class i made the system that makes the pattern and shows it to the user.
+ * in the veranderkleur() method I put the code that changes the color of the buttons when the sequence gets shown.
+ * in the makesequenceActionListener() method ...
+ * in the showsequence() method I make the program show the randomly generated sequence to the player.
+ * in the simon() method I create a randomly generated sequence
  *
  */
 public class Game {
