@@ -6,6 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * 
+ * this class is for making a connection between
+ *
+ */
+
 public class DatabaseConnectie {
 
 	Connection con;

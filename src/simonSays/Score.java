@@ -11,10 +11,15 @@ import javax.swing.JTextField;
 
 /**
  * 
- * in this class I put the scoring system and the name input.
- * in the score() method I create the scoreboard mechanics, if the button the player presses is the same as the sequence the score goes up, 
- * if its not the same the score goes down.
- *in the naam() method I create the space where the player can enter his/her name.
+ * In this class I put the scoring system and the name input.
+ * 
+ * In the score() method I create the scoreboard mechanics, if the button the player presses is the same as the sequence the score goes up, 
+ * If it's not the same the score goes down.
+ * The score gets shown in a JLabel.
+ * 
+ * In the naam() method I create the space where the player can enter his/her name.
+ * I do this by creating a JTextField and a JButton.
+ * The Player can press the button to enter his name and score into the database.
  *
  */
 public class Score {

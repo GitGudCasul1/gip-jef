@@ -11,10 +11,19 @@ import javax.swing.Timer;
 
 /**
  * 
- * in this class i made the buttons and the system that checks if the input is correct.
- * in the buttons() method i create all the buttons that you can see on the screen.
- * the input() method i put the code that gets executed when the player presses a button.
- * in the controleinput() method i check if the players input is the same as the randomly generated sequence.
+ * In this class I made the buttons and the system that checks if the input is correct.
+ * Every button has an unique color.
+ * The player needs to press the buttons in the same order as shown in the sequence in order to score points.
+ * 
+ * In the buttons() method I create all the buttons that you can see on the screen.
+ * I do that by creating 4 JButtons.
+ * In the actionlistner I put what happens when you press a button.
+ * 
+ * In the input() method I put the code that gets executed when the player presses a button.
+ * 
+ * In the controleinput() method I check if the players input is the same as the randomly generated sequence.
+ * I do this by making a char for the input and the sequence and then checking if those 2 chars are the same.
+ * If the 2 chars are the same the score goes up, if they are not the same the score goes down.
  *
  */
 public class Buttons {
