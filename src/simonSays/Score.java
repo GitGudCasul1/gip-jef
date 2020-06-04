@@ -24,9 +24,13 @@ import javax.swing.JTextField;
  */
 public class Score {
 
+	Game game;
 	int score = 0;
 	public JLabel scoreboard = new JLabel("Score: " + score);
 	
+	public Score(Game game) {
+		this.game = game;
+	}
 		
 	public void score(String result) {
 		if (result == "WIN") {
@@ -48,7 +52,7 @@ public class Score {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				game.dc.insertNameIntoDB(naamlabel.getText(), score);
 			}
 		});
 		

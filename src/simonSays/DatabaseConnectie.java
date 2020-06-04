@@ -16,9 +16,13 @@ public class DatabaseConnectie {
 
 	Connection con;
 	
-	public static void main(String[] args) {
-		DatabaseConnectie dc = new DatabaseConnectie();
-		dc.connectie();
+//	public static void main(String[] args) {
+//		DatabaseConnectie dc = new DatabaseConnectie();
+//		dc.connectie();
+//	}
+	
+	public DatabaseConnectie() {
+		connectie();
 	}
 	
 	public void connectie() {
@@ -40,6 +44,17 @@ public class DatabaseConnectie {
 			while (resultset.next()) {
 				System.out.println(resultset.getString("naam"));			
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void insertNameIntoDB(String name, int score) {
+		Statement statement;
+		try {
+			statement = con.createStatement();
+			statement.execute("insert into tablename values(" +name +"," + score+")");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

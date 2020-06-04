@@ -41,10 +41,11 @@ public class Game {
 	Score score;
 	int sequenceCounter = 0;
 	public Timer t = new Timer(2000, makesequenceActionListener());
+	public DatabaseConnectie dc = new DatabaseConnectie();
 	
 	public static void main(String[] args) { //this is the main method, this is where you run other methods
 		Game game = new Game();
-		game.score = new Score();
+		game.score = new Score(game);
 		game.buttons = new Buttons(game, game.score);
 		JFrame frame = new JFrame();
 		frame.setSize(900,600);
