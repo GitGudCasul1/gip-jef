@@ -31,7 +31,7 @@ public class Score {
 	public Score(Game game) {
 		this.game = game;
 	}
-		
+
 	public void score(String result) {
 		if (result == "WIN") {
 			score++;
@@ -52,7 +52,7 @@ public class Score {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				game.dc.insertNameIntoDB(naamlabel.getText(), score);
+				game.dc.insertNameIntoDB(naamveld.getText(), score);
 			}
 		});
 		
