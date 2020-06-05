@@ -2,6 +2,7 @@ package simonSays;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -57,10 +58,13 @@ public class DatabaseConnectie {
 	}
 	
 	public void insertNameIntoDB(String name, int score) {
-		Statement statement;
+		System.out.println("Inserting naam=" + name + ", score:" + score);
+		PreparedStatement statement;
 		try {
-			statement = con.createStatement();
-			statement.execute("insert into Score values(" +name +"," + score+")");
+			statement = con.prepareStatement("insert into Score (naam, score) values(? ,?)");
+			statement.setString(1, name);
+			statement.setInt(2, score);
+			statement.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
