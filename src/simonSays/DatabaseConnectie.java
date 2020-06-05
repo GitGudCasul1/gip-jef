@@ -8,7 +8,13 @@ import java.sql.Statement;
 
 /**
  * 
- * this class is for making a connection between
+ * This class is for making a connection between the program and the database.
+ * I used a jdbc connection with the url to my database file.
+ * 
+ * With the insertNameIntoDB() method I insert the players name and the score into the database.
+ * I did this by executing a statement that puts the name and score into the database.
+ * 
+ * With the executestatement() method i get all the data from the database.
  *
  */
 
@@ -26,13 +32,13 @@ public class DatabaseConnectie {
 	}
 	
 	public void connectie() {
-		DatabaseConnectie dbc = new DatabaseConnectie();
+//		DatabaseConnectie dbc = new DatabaseConnectie();
 		
 		try {
-			dbc.con = DriverManager.getConnection("jdbc:sqlite:src/simonSays/SimonSays.db");
+			con = DriverManager.getConnection("jdbc:sqlite:src/simonSays/SimonSays.db");
 			
-			ResultSet variableresultset = dbc.executestatement();
-			dbc.printResultSet(variableresultset);
+			ResultSet variableresultset = executestatement();
+			printResultSet(variableresultset);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -54,7 +60,7 @@ public class DatabaseConnectie {
 		Statement statement;
 		try {
 			statement = con.createStatement();
-			statement.execute("insert into tablename values(" +name +"," + score+")");
+			statement.execute("insert into Score values(" +name +"," + score+")");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
