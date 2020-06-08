@@ -52,7 +52,7 @@ public class Game {
 		JPanel panel = new JPanel();
 		
 		game.buttons.buttons(panel);
-		game.simon(game.patternlength);
+//		game.simon(game.patternlength);
 		panel.add(game.score.scoreboard);
 		game.score.naam(panel);
 		game.score.difficulty(panel);
@@ -111,11 +111,11 @@ public void showSequence() {
 	
 	
 	
-	public void simon(int length) { //this method creates a random pattern of letters
+	public void simon() { //this method creates a random pattern of letters
 		String[] array = {"R", "G", "Y","B"};
 		Random r = new Random();
 		
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < patternlength; i++) {
 			int randomNumber = r.nextInt(array.length);
 			sequence = sequence + array[randomNumber];			
 		}

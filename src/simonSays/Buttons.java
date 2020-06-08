@@ -100,6 +100,7 @@ public class Buttons {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 //				controleinput();
+				gameinstantie.simon();
 				gameinstantie.showSequence();
 			}
 		});
