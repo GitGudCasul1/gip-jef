@@ -75,7 +75,13 @@ public class Score {
         slider.setMajorTickSpacing(2); 
         slider.setMinorTickSpacing(1);
         
-        slider.addChangeListener(new ChangeListener() {
+        
+        
+		panel.add(slider);
+	}
+	
+	public void patternlengthchanger() {
+		slider.addChangeListener(new ChangeListener() {
 			
 			@Override
 			public void stateChanged(ChangeEvent e) {
@@ -83,8 +89,6 @@ public class Score {
 				game.patternlength = slider.getValue();
 			}
 		});
-        
-		panel.add(slider);
 	}
 	
 }

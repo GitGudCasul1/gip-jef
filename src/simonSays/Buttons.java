@@ -100,30 +100,35 @@ public class Buttons {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 //				controleinput();
+				gameinstantie.sequence = "";
+				input = "";
+				length = 0;
+				
+				gameinstantie.score.patternlengthchanger();
 				gameinstantie.simon();
 				gameinstantie.showSequence();
 			}
 		});
 		
-		JButton nextSeq = new JButton("Next Sequence");
-		nextSeq.setPreferredSize(new Dimension(150, 50));
-		nextSeq.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				gameinstantie.sequence = "";
-				input = "";
-				length = 0;
-				gameinstantie.simon(gameinstantie.patternlength);
-			}
-		});
+//		JButton nextSeq = new JButton("Next Sequence");
+//		nextSeq.setPreferredSize(new Dimension(150, 50));
+//		nextSeq.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				gameinstantie.sequence = "";
+//				input = "";
+//				length = 0;
+//				gameinstantie.simon();
+//			}
+//		});
 				
 		panel.add(red);
 		panel.add(green);
 		panel.add(yellow);
 		panel.add(blue);
 		panel.add(start);
-		panel.add(nextSeq);
+//		panel.add(nextSeq);
 	}
 	
 	private void input(String kleur) { //this method is what happens when you press a button

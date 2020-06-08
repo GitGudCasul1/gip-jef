@@ -35,7 +35,7 @@ import javax.swing.Timer;
  */
 public class Game {
 	public String sequence = "";
-	public int patternlength = 0;
+	public int patternlength = 4;
 	int gameScore = 0;
 	Buttons buttons;
 	Score score;
