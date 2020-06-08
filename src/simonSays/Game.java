@@ -35,7 +35,7 @@ import javax.swing.Timer;
  */
 public class Game {
 	public String sequence = "";
-	public static int patternlength = 4;
+	public int patternlength = 0;
 	int gameScore = 0;
 	Buttons buttons;
 	Score score;
@@ -52,9 +52,10 @@ public class Game {
 		JPanel panel = new JPanel();
 		
 		game.buttons.buttons(panel);
-		game.simon(patternlength);
+		game.simon(game.patternlength);
 		panel.add(game.score.scoreboard);
 		game.score.naam(panel);
+		game.score.difficulty(panel);
 		
 		frame.add(panel);
 		frame.setVisible(true);

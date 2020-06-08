@@ -7,7 +7,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  * 
@@ -27,6 +30,7 @@ public class Score {
 	Game game;
 	int score = 0;
 	public JLabel scoreboard = new JLabel("Score: " + score);
+	public JSlider slider = new JSlider(4, 8, 6);
 	
 	public Score(Game game) {
 		this.game = game;
@@ -59,6 +63,28 @@ public class Score {
 		panel.add(naamlabel);
 		panel.add(naamveld);
 		panel.add(entername);
+	}
+	
+	public void difficulty(JPanel panel) {
+		
+		
+		slider.setPaintTrack(true); 
+        slider.setPaintTicks(true); 
+        slider.setPaintLabels(true);
+        
+        slider.setMajorTickSpacing(2); 
+        slider.setMinorTickSpacing(1);
+        
+        slider.addChangeListener(new ChangeListener() {
+			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				// TODO Auto-generated method stub
+				game.patternlength = slider.getValue();
+			}
+		});
+        
+		panel.add(slider);
 	}
 	
 }
